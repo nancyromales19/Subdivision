@@ -3,15 +3,44 @@
 }
 
 @section Styles {
-    <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 }
 
 <div class="hero-section">
-    <div class="hero-content">
-        <h1 class="title">Beverly</><span>Woods</span></h1>
-        <div class="overlay-text">
-            <h2>LOGIN SAMPLE</h2>
-        </div>
+    <div class="login-box">
+        <h1 class="welcome-text">WELCOME !</h1>
+        <form>
+            <br>
+            <label for="username" class="label-text">Username</label>
+            <input type="text" id="username" class="input-field" placeholder="Enter your username">
+            <br><br>
+            <label for="password" class="label-text">Password</label>
+            <input type="password" id="password" class="input-field" placeholder="Enter your password">
+            <br><br>
+            <div class="button-group">
+                <button type="submit" class="btn-signin">Sign in</button>
+                <a href="#" class="btn-register">Register</a>
+            </div>
+        </form>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        customBlue: '#155774',
+                        customOrange: '#E4280F',
+                    },
+                    fontFamily: {
+                        jersey: ['Jersey 25', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+}

@@ -79,7 +79,7 @@ body, html {
         text-indent: 50px;
     }
 
-/* LOGIN PAGE */
+/* LOGIN PAGE styles */
 .hero-section {
     display: flex;
     justify-content: center;
@@ -148,3 +148,40 @@ body, html {
     text-decoration: underline;
     font-weight: 400;
 }
+
+/* SIGN UP PAGE styles */
+
+.signup-box {
+    background: rgba(21, 87, 116, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    border: 10px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+    height: 800PX;
+}
+
+.signup-text {
+    font-family: 'Jersey 25', sans-serif;
+    font-size: 60px;
+    color: #E4280F;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.input-fields {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-confirm {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+

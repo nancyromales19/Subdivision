@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Signed In</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Dashboard</a></li>
+                <li><a asp-controller="Security" asp-action="Index">Security</a></li>
+                <li><a asp-controller="Reservation" asp-action="Index">Reservation</a></li>
+                <li><a asp-controller="Billing" asp-action="Index">Billing</a></li>
+                <li><a asp-controller="Account" asp-action="Profile">Profile</a></li>
+                <li><a asp-controller="Account" asp-action="Logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <footer>
+        <p>© 2025 Beverly Woods</p>
+    </footer>
+</body>
+</html>

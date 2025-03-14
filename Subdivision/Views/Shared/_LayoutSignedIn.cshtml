@@ -2,29 +2,130 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Signed In</title>
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #335560;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+        }
+
+            nav ul {
+                display: flex;
+                list-style: none;
+            }
+
+                nav ul li {
+                    margin-right: 25px;
+                    position: relative;
+                }
+
+                    nav ul li:last-child {
+                        margin-right: 0;
+                    }
+
+                    nav ul li a {
+                        color: white;
+                        text-decoration: none;
+                        font-size: 14px;
+                        font-weight: 500;
+                        padding: 15px 0;
+                        display: inline-block;
+                    }
+
+                        nav ul li a:hover {
+                            text-decoration: underline;
+                        }
+
+                    /* Add active state indicator */
+                    nav ul li.active a {
+                        font-weight: 600;
+                    }
+
+        /* Profile icon */
+        .profile-link {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            color: #335560;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            margin-left: 25px;
+        }
+
+        /* Main content area */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Footer styles */
+        footer {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a asp-controller="Home" asp-action="Index">Dashboard</a></li>
+                <li class="active"><a asp-controller="Home" asp-action="Index">Dashboard</a></li>
                 <li><a asp-controller="Security" asp-action="Index">Security</a></li>
                 <li><a asp-controller="Reservation" asp-action="Index">Reservation</a></li>
                 <li><a asp-controller="Billing" asp-action="Index">Billing</a></li>
-                <li><a asp-controller="Account" asp-action="Profile">Profile</a></li>
-                <li><a asp-controller="Account" asp-action="Logout">Logout</a></li>
             </ul>
+            <div class="profile-circle">
+                <span>JP</span>
+            </div>
         </nav>
     </header>
-
     <div class="container">
         @RenderBody()
     </div>
-
     <footer>
-        <p>© 2025 Beverly Woods</p>
+        <p>© 2025 YourApp</p>
     </footer>
 </body>
 </html>

@@ -1,46 +1,163 @@
 ﻿@{
     ViewData["Title"] = "Login Page";
+    Layout = null;
 }
 
-@section Styles {
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
     <script src="https://cdn.tailwindcss.com"></script>
-}
-
-<div class="hero-section">
-    <div class="login-box">
-        <h1 class="welcome-text">WELCOME !</h1>
-        <form>
-            <br>
-            <label for="username" class="label-text">Username</label>
-            <input type="text" id="username" class="input-field" placeholder="Enter your username">
-            <br><br>
-            <label for="password" class="label-text">Password</label>
-            <input type="password" id="password" class="input-field" placeholder="Enter your password">
-            <br><br>
-            <div class="button-group">
-                <button type="submit" class="btn-signin">Sign in</button>
-                <a asp-controller="Home" class="btn-register" asp-action="Register">Register</a>
-            </div>
-        </form>
-    </div>
-</div>
-
-@section Scripts {
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        customBlue: '#155774',
-                        customOrange: '#E4280F',
-                    },
-                    fontFamily: {
-                        jersey: ['Jersey 25', 'sans-serif'],
-                        inter: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            overflow: hidden; /* Prevents scrolling */
         }
-    </script>
-}
+
+        .login-container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .image-section {
+            width: 45%;
+            background: url('/img/house.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .form-section {
+            width: 55%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f3ee;
+            padding: 20px;
+        }
+
+        .login-box {
+            width: 520px;
+            height: 470px;
+            background-color: #FBFCF4;
+            padding: 40px;
+            border-radius: 10px;
+            border: 3px solid #D9DED5;
+            text-align: center;
+            /* Ensure footer stays at the bottom */
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+            .login-box h1 {
+                font-size: 24px;
+                font-weight: 700;
+                margin-bottom: 25px;
+                color: #445E4F;
+            }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 18px;
+        }
+
+            .input-group label {
+                display: block;
+                font-size: 16px;
+                color: #333;
+                margin-bottom: 6px;
+            }
+
+            .input-group input {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                font-size: 15px;
+            }
+
+        .checkbox-group {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 25px;
+            color: #445E4F;
+        }
+
+        .signin-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #445E4F;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+            .signin-button:hover {
+                background-color: #245848;
+            }
+
+        .footer-text {
+            font-size: 12px;
+            color: #777;
+            /* Center align text */
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            /* Position at the bottom */
+            position: absolute;
+            bottom: 5px; /* Move closer */
+            margin-bottom: 20px; /* Prevents text from touching the bottom */
+        }
+
+            .footer-text a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+        /* Ensure form takes up space and footer stays at bottom */
+        form {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="image-section"></div>
+        <div class="form-section">
+            <div class="login-box">
+                <h1>Sign In</h1>
+                <form>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox"> Remember me</label>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="signin-button">SIGN IN</button>
+                </form>
+            </div>
+            <div class="footer-text">
+                © 2025 Beverly Woods. All rights reserved. <br>
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
